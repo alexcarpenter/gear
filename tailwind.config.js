@@ -1,6 +1,7 @@
 const plugin = require("tailwindcss/plugin");
 const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
+const { lime } = require("tailwindcss/colors");
 
 module.exports = {
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
@@ -77,6 +78,10 @@ module.exports = {
           },
           "* + h2, * + h3": {
             marginTop: "2rem",
+          },
+          "ul > li::before": {
+            content: "'—'",
+            marginRight: ".5rem",
           },
         },
       };

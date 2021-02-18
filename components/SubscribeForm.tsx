@@ -1,19 +1,8 @@
-import { cx } from "@/lib/utils";
 import * as React from "react";
 import { useMachine } from "@xstate/react";
 import { Machine } from "xstate";
-
-// Copied from https://github.com/vigour-io/nice-is-email/blob/master/lib/index.js
-const EMAIL_PATTERN = /^([^.](?![a-zA-Z0-9!#$%&'*+\-/=?^_`{|}~]+\.\.)([a-zA-Z0-9!#$%&'*+\-/=?^_`{|}~.]+[^.])|([a-zA-Z0-9]{1,2}))@([A-Za-z0-9-]{1,64}\.){1,10}[a-zA-Z]{2,64}$/;
-
-const isEmail = (value) => {
-  return (
-    typeof value === "string" &&
-    EMAIL_PATTERN.test(value) &&
-    value.indexOf("@") < 65 &&
-    value.length < 255
-  );
-};
+import { cx, isEmail } from "@/lib/utils";
+import Emoji from "./Emoji";
 
 const postNewSubscriber = async (email) =>
   await fetch("/api/subscribe", {
@@ -102,11 +91,11 @@ export default function SubscribeForm() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <div className='relative flex'>
+        <div className='relative flex font-mono'>
           <input
             onChange={(e) => setEmail(e.target.value)}
             type='text'
-            className='p-4 mr-2 flex-1 border-2 border-gray-200 focus:border-black focus:ring ring-gray-300 bg-gray-50 outline-none'
+            className='p-4 mr-2 flex-1 border-2 border-gray-200 focus:border-green-500 focus:ring ring-green-300 bg-gray-50 outline-none'
             placeholder='Your email address'
           />
           <button
@@ -114,7 +103,7 @@ export default function SubscribeForm() {
             disabled={isDisabled}
             className={cx(
               isDisabled && "pointer-events-none",
-              "relative p-4 bg-black hover:bg-gray-700 focus:outline-none focus:ring ring-gray-300 text-white",
+              "relative p-4 bg-green-500 hover:bg-green-700 focus:outline-none focus:ring ring-green-300 text-white",
             )}
           >
             {current.matches("loading") && (
@@ -150,19 +139,19 @@ export default function SubscribeForm() {
 
       {current.matches("success") && (
         <p className='font-mono text-gray-500 text-sm'>
-          Success, thanks for subscribing!
+          <Emoji label="bull horns" symbol="🤘" /> Success, thanks for subscribing!
         </p>
       )}
 
       {current.matches("error") && (
         <p className='font-mono text-gray-500 text-sm'>
-          Invalid email. Please try again.
+          <Emoji label="man facepalming" symbol="🤦‍♂️" /> Invalid email. Please try again.
         </p>
       )}
 
       {current.matches("failure") && (
         <p className='font-mono text-gray-500 text-sm'>
-          Something went wrong while submitting the form. Please try again.
+          <Emoji label="thinking" symbol="🤔" /> Something went wrong while submitting the form. Please try again.
         </p>
       )}
     </>
