@@ -91,11 +91,11 @@ export default function SubscribeForm() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <div className='relative flex font-mono'>
+        <div className='relative flex flex-col sm:flex-row gap-4 font-mono'>
           <input
             onChange={(e) => setEmail(e.target.value)}
             type='text'
-            className='p-4 mr-2 flex-1 border-2 border-gray-200 focus:border-green-500 focus:ring ring-green-300 bg-gray-50 outline-none'
+            className='p-4 flex-1 border-2 border-gray-200 focus:border-green-500 focus:ring ring-green-300 bg-gray-50 outline-none'
             placeholder='Your email address'
           />
           <button
