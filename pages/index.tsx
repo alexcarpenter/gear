@@ -10,12 +10,13 @@ export default function Home() {
           <p className='text-3xl'>
             <Emoji label='wave' symbol='👋' />
           </p>
-          <p className="text-xl">
-            Welcome, I'm Alex Carpenter and this is my place to share my passion
-            for tech and everyday carry gear. I've never shared much about this
-            type of content, but I find a lot of enjoyment nerding out about
-            this stuff, so here we are. Here is a look at some pieces of content
-            you can expect to see around here.
+          <p className='text-xl'>
+            Welcome, I'm <a href='https://alexcarpenter.me'>Alex Carpenter</a>{" "}
+            and this is my place to share my passion for tech and everyday carry
+            gear. I've never shared much about this type of content, but I find
+            a lot of enjoyment nerding out about this stuff, so here we are.
+            Here is a look at some pieces of content you can expect to see
+            around here.
           </p>
           <ul>
             <li>Favorite tech and everydary carry pouches</li>
@@ -39,8 +40,15 @@ export default function Home() {
               <p>
                 Outside of sharing content from this site, the newsletter is a
                 way for me to share inspiration that I have found around the web
-                that I have enjoyed. You will probably see links to Chase Reeves
-                videos, Taylor Welden articles, etc.
+                that I have enjoyed. You will probably see links to{" "}
+                <a href='https://www.youtube.com/user/chasereeves'>
+                  Chase Reeves
+                </a>{" "}
+                videos,{" "}
+                <a href='https://www.carryology.com/contributor/taylor-welden/'>
+                  Taylor Welden
+                </a>{" "}
+                articles, etc.
               </p>
               <p>
                 If that sounds interesing to you, feel free to subscribe below.

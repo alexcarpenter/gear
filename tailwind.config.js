@@ -1,7 +1,6 @@
 const plugin = require("tailwindcss/plugin");
 const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
-const { lime } = require("tailwindcss/colors");
 
 module.exports = {
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
@@ -70,7 +69,8 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    plugin(function ({ addComponents }) {
+    plugin(function ({ theme, addComponents }) {
+      console.log(theme);
       const prose = {
         ".prose": {
           "> * + *": {
@@ -82,6 +82,13 @@ module.exports = {
           "ul > li::before": {
             content: "'—'",
             marginRight: ".5rem",
+          },
+          a: {
+            textDecoration: "underline",
+            textDecorationColor: theme("colors.gray.300"),
+            "&:hover, &:focus": {
+              color: theme("colors.green.500"),
+            },
           },
         },
       };
