@@ -7,8 +7,20 @@ export default function Home() {
   return (
     <>
       <Head>
+        <link
+          rel='preload'
+          href='/fonts/inter-var-latin.woff2'
+          as='font'
+          type='font/woff2'
+          crossOrigin='anonymous'
+        />
+        <meta charSet='UTF-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <meta httpEquiv='x-ua-compatible' content='ie=edge' />
         <title>Gear - Alex Carpenter</title>
-        <meta name='description' content='Tech and everyday carry gear'></meta>
+        <meta name='og:title' content='Gear - Alex Carpenter' />
+        <meta name='description' content='Tech and everyday carry gear' />
+        <meta name='og:description' content='Tech and everyday carry gear' />
       </Head>
       <div className='py-16 px-4'>
         <div className='max-w-screen-sm mx-auto space-y-8'>
