@@ -91,7 +91,7 @@ export default function SubscribeForm() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <div className='relative flex flex-col sm:flex-row gap-4 font-mono'>
+        <div className='relative flex flex-col sm:flex-row font-mono'>
           <input
             onChange={(e) => setEmail(e.target.value)}
             type='text'
@@ -103,7 +103,7 @@ export default function SubscribeForm() {
             disabled={isDisabled}
             className={cx(
               isDisabled && "pointer-events-none",
-              "relative p-4 bg-green-500 hover:bg-green-700 focus:outline-none focus:ring ring-green-300 text-white",
+              "relative mt-4 sm:mt-0 ml-0 sm:ml-4 p-4 bg-green-500 hover:bg-green-700 focus:outline-none focus:ring ring-green-300 text-white",
             )}
           >
             {current.matches("loading") && (
