@@ -81,7 +81,7 @@ const subscribeMachine = Machine(
   },
 );
 
-export default function SubscribeForm() {
+const SubscribeForm: React.FC = () => {
   const router = useRouter();
   const [email, setEmail] = React.useState("");
   const [current, send] = useMachine(subscribeMachine);
@@ -161,4 +161,6 @@ export default function SubscribeForm() {
       )}
     </>
   );
-}
+};
+
+export default SubscribeForm;

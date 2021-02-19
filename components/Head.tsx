@@ -1,16 +1,18 @@
 import NextHead from "next/head";
 
-const defaultImage = "og-image.png";
-
-export default function Head({
-  title = "Alex Carpenter",
-  description = "",
-  image = defaultImage,
-}: {
+interface IHeadProps {
   title?: string;
   description?: string;
   image?: string;
-}) {
+}
+
+const defaultImage = "og-image.png";
+
+const Head: React.FC<IHeadProps> = ({
+  title = "Alex Carpenter",
+  description = "",
+  image = defaultImage,
+}) => {
   return (
     <>
       <NextHead>
@@ -61,4 +63,6 @@ export default function Head({
       </NextHead>
     </>
   );
-}
+};
+
+export default Head;

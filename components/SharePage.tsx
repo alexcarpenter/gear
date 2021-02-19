@@ -1,7 +1,9 @@
-const SharePage: React.FC<{
+interface ISharePageProps {
   slug: string;
   title: string;
-}> = ({ slug, title }) => {
+}
+
+const SharePage: React.FC<ISharePageProps> = ({ slug, title }) => {
   const text = encodeURIComponent(title);
   return (
     <div className='mt-16 flex items-center font-mono text-sm'>

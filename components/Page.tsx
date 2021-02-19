@@ -3,7 +3,16 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { widont } from "@/lib/utils";
 
-function Page({ meta, children }) {
+interface IPageProps {
+  meta: {
+    title: string;
+    description?: string;
+    image?: string;
+  };
+  children: React.ReactNode;
+}
+
+function Page({ meta, children }: IPageProps) {
   const { title, description, image } = meta;
   return (
     <>

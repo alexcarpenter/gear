@@ -40,8 +40,9 @@ export default function Home() {
               <li>Favorite tech and everydary carry pouches</li>
               <li>Onebag travel for 7 days in Maui</li>
               <li>Favorite everyday carry backpack</li>
+              <li>Favorite insulated water bottle</li>
               <li>
-                ...and hopefully interviews with folks from the community{" "}
+                and possibly interviews with folks from the community{" "}
                 <Emoji label='fingers crossed' symbol='🤞' />
               </li>
             </ul>

@@ -6,7 +6,7 @@ const navItems = [
   { href: "/newsletter", label: "Newsletter" },
 ];
 
-export default function Nav() {
+const Nav: React.FC = () => {
   return (
     <nav className='mb-8'>
       <ul className='flex items-center mt-4 sm:mt-0 space-x-4 sm:space-x-8 font-mono'>
@@ -24,4 +24,6 @@ export default function Nav() {
       </ul>
     </nav>
   );
-}
+};
+
+export default Nav;

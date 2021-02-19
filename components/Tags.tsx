@@ -1,8 +1,10 @@
 import * as React from "react";
 
-const Tags: React.FC<{
+interface ITagsProps {
   tags: string[];
-}> = ({ tags }) => {
+}
+
+const Tags: React.FC<ITagsProps> = ({ tags }) => {
   let [showAll, setShowAll] = React.useState(false);
   let total = tags.length;
 
