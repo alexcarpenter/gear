@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import renderToString from "next-mdx-remote/render-to-string";
+import MDXComponents from "@/components/Mdx";
 
 const root = process.cwd();
 
@@ -18,9 +19,34 @@ export async function getContentByType(type) {
       return {
         slug,
         type,
-        title: data.title,
+        ...data,
       };
     });
 
   return content;
+}
+
+export async function getContentBySlug(slug: string, type?: string) {
+  const source = type
+    ? fs.readFileSync(path.join(root, "content", type, `${slug}.mdx`), "utf8")
+    : fs.readFileSync(path.join(root, "content", `${slug}.mdx`), "utf8");
+
+  const { data, content } = matter(source);
+  const mdxSource = await renderToString(content, {
+    components: MDXComponents,
+    mdxOptions: {
+      remarkPlugins: [],
+      rehypePlugins: [],
+    },
+    scope: data,
+  });
+
+  return {
+    source: mdxSource,
+    frontMatter: {
+      type: type || null,
+      slug,
+      ...data,
+    },
+  };
 }

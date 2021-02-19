@@ -95,7 +95,7 @@ export default function SubscribeForm() {
           <input
             onChange={(e) => setEmail(e.target.value)}
             type='text'
-            className='p-4 flex-1 border-2 border-gray-200 focus:border-green-500 focus:ring ring-green-300 bg-gray-50 outline-none'
+            className='p-4 flex-1 border-2 border-gray-200 focus:border-gray-500 focus:ring ring-gray-300 bg-gray-50 outline-none'
             placeholder='Your email address'
           />
           <button
@@ -103,7 +103,7 @@ export default function SubscribeForm() {
             disabled={isDisabled}
             className={cx(
               isDisabled && "pointer-events-none",
-              "relative mt-4 sm:mt-0 ml-0 sm:ml-4 p-4 bg-green-500 hover:bg-green-700 focus:outline-none focus:ring ring-green-300 text-white",
+              "relative mt-4 sm:mt-0 ml-0 sm:ml-4 p-4 bg-gray-900 hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:ring ring-gray-300 text-white",
             )}
           >
             {current.matches("loading") && (
@@ -138,20 +138,23 @@ export default function SubscribeForm() {
       </form>
 
       {current.matches("success") && (
-        <p className='font-mono text-gray-500 text-sm'>
-          <Emoji label="bull horns" symbol="🤘" /> Success, thanks for subscribing!
+        <p className='font-mono text-gray-500 text-sm mt-4'>
+          <Emoji label='bull horns' symbol='🤘' /> Success, thanks for
+          subscribing!
         </p>
       )}
 
       {current.matches("error") && (
-        <p className='font-mono text-gray-500 text-sm'>
-          <Emoji label="man facepalming" symbol="🤦‍♂️" /> Invalid email. Please try again.
+        <p className='font-mono text-gray-500 text-sm mt-4'>
+          <Emoji label='man facepalming' symbol='🤦‍♂️' /> Invalid email. Please
+          try again.
         </p>
       )}
 
       {current.matches("failure") && (
-        <p className='font-mono text-gray-500 text-sm'>
-          <Emoji label="thinking" symbol="🤔" /> Something went wrong while submitting the form. Please try again.
+        <p className='font-mono text-gray-500 text-sm mt-4'>
+          <Emoji label='thinking' symbol='🤔' /> Something went wrong while
+          submitting the form. Please try again.
         </p>
       )}
     </>

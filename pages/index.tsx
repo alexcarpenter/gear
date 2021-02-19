@@ -48,7 +48,7 @@ export default function Home() {
           </section>
           <section>
             <header className='flex items-center'>
-              <h2 className='mr-4 text-xl text-green-500 font-bold tracking-tight font-mono'>
+              <h2 className='mr-4 text-xl text-gray-900 font-bold tracking-tight font-mono'>
                 Join the newsletter
               </h2>
               <span className='flex-1 h-0.5 bg-gray-200' />
