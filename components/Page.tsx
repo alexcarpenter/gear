@@ -1,6 +1,6 @@
 import Head from "@/components/Head";
 import Nav from "@/components/Nav";
-// import Footer from "@/components/Footer";
+import Footer from "@/components/Footer";
 import { widont } from "@/lib/utils";
 
 function Page({ meta, children }) {
@@ -16,7 +16,7 @@ function Page({ meta, children }) {
         <div className='flex flex-col flex-1 w-full max-w-screen-sm mx-auto text-gray-600'>
           <Nav />
           {children}
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </div>
     </>

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useRouter } from "next/router";
 import { useMachine } from "@xstate/react";
 import { Machine } from "xstate";
 import { cx, isEmail } from "@/lib/utils";
@@ -81,6 +82,7 @@ const subscribeMachine = Machine(
 );
 
 export default function SubscribeForm() {
+  const router = useRouter();
   const [email, setEmail] = React.useState("");
   const [current, send] = useMachine(subscribeMachine);
   const handleSubmit = (e) => {
