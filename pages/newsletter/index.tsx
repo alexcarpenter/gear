@@ -10,11 +10,11 @@ export default function Newsletter() {
     >
       <Page.Header>
         <Page.Title>Newsletter</Page.Title>
-        <Page.Description>
+        {/* <Page.Description>
           Dictumst cubilia mauris vestibulum tortor ultrices tempus potenti
           tristique cum fermentum senectus semper consequat euismod leo
           ultricies sociosqu per rhoncus
-        </Page.Description>
+        </Page.Description> */}
       </Page.Header>
       <SubscribeForm />
     </Page>

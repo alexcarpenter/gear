@@ -22,7 +22,12 @@ module.exports = {
   },
   plugins: [
     plugin(function ({ theme, addComponents }) {
-      console.log(theme);
+      const textUnderline = {
+        ".text-underline": {
+          textDecoration: "underline",
+          textDecorationColor: theme("colors.gray.300"),
+        },
+      };
       const prose = {
         ".prose, .prose > div": {
           "> * + *": {
@@ -46,6 +51,7 @@ module.exports = {
       };
 
       addComponents(prose);
+      addComponents(textUnderline);
     }),
   ],
 };

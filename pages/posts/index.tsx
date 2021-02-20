@@ -11,11 +11,11 @@ export default function Home({ posts }) {
     >
       <Page.Header>
         <Page.Title>Posts</Page.Title>
-        <Page.Description>
+        {/* <Page.Description>
           Dictumst cubilia mauris vestibulum tortor ultrices tempus potenti
           tristique cum fermentum senectus semper consequat euismod leo
           ultricies sociosqu per rhoncus
-        </Page.Description>
+        </Page.Description> */}
       </Page.Header>
       <ul className='space-y-8'>
         {posts.map((post) => {

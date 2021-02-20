@@ -2,14 +2,15 @@ import hydrate from "next-mdx-remote/hydrate";
 import { getContentByType, getContentBySlug } from "@/lib/mdx";
 import MDXComponents from "@/components/Mdx";
 import Page from "@/components/Page";
-import Separator from "@/components/Separator";
 import SharePage from "@/components/SharePage";
 import Tags from "@/components/Tags";
+import ViewCounter from "@/components/ViewCounter";
 
 export default function Post({ frontMatter, source }) {
   const content = hydrate(source, { components: MDXComponents });
   const {
     slug,
+    type,
     title,
     description,
     publishedOn,
@@ -52,6 +53,10 @@ export default function Post({ frontMatter, source }) {
       </Page.Header>
       <div className='prose'>{content}</div>
       <SharePage slug={slug} title={title} />
+      <ViewCounter
+        className='mt-8 font-mono text-sm text-center'
+        slug={`${type}/${slug}`}
+      />
     </Page>
   );
 }
