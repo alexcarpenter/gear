@@ -19,7 +19,10 @@ const Tags: React.FC<ITagsProps> = ({ tags }) => {
         .map((t) => `#${t}`)
         .join(", ")}
       ,{" "}
-      <button onClick={() => setShowAll(true)} className='hover:text-gray-900'>
+      <button
+        onClick={() => setShowAll(true)}
+        className='hover:text-gray-900 hover:bg-yellow focus:text-gray-900 focus:bg-yellow'
+      >
         (+{total - 2})
       </button>
     </span>

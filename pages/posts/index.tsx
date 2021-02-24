@@ -24,7 +24,7 @@ export default function Home({ posts }) {
               <article>
                 <h2 className='font-bold text-xl'>
                   <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
-                    <a className='text-gray-900 hover:underline'>
+                    <a className='text-gray-900 hover:bg-yellow'>
                       {post.title}
                     </a>
                   </Link>

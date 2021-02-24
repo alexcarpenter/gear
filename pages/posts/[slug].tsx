@@ -36,14 +36,14 @@ export default function Post({ frontMatter, source }) {
             </div>
           ) : (
             <div>
-              <p className='text-gray-900 font-bold'>Published:</p>
+              <p className='text-gray-900 font-bold'>Published{"\u00A0"}¬</p>
               <time dateTime={new Date(publishedOn).toISOString()}>
                 {publishedOn}
               </time>
             </div>
           )}
           <div>
-            <p className='text-gray-900 font-bold'>Tagged:</p>
+            <p className='text-gray-900 font-bold'>Tagged{"\u00A0"}¬</p>
             <Tags tags={tags} />
           </div>
         </div>

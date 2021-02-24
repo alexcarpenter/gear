@@ -1,4 +1,4 @@
-import Head from "next/head";
+import CustomLink from "@/components/CustomLink";
 import Emoji from "@/components/Emoji";
 import Page from "@/components/Page";
 // import Subscribers from "@/components/Subscribers";
@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <Page
       meta={{
-        title: "Welcome",
+        title: "Gear",
       }}
     >
       <Page.Header>
@@ -18,11 +18,14 @@ export default function Home() {
       </Page.Header>
       <section className='prose text-gray-600'>
         <p className='text-xl'>
-          I'm <a href='https://alexcarpenter.me'>Alex Carpenter</a> and this is
-          my place to share my passion for tech and everyday carry gear. I've
-          never shared much about this type of content, but I find a lot of
-          enjoyment nerding out about this stuff, so here we are. Here is a look
-          at some pieces of content you can expect to see around here.
+          I'm{" "}
+          <CustomLink href='https://alexcarpenter.me'>
+            Alex Carpenter
+          </CustomLink>{" "}
+          and this is my place to share my passion for tech and everyday carry
+          gear. I've never shared much about this type of content, but I find a
+          lot of enjoyment nerding out about this stuff, so here we are. Here is
+          a look at some pieces of content you can expect to see around here.
         </p>
         <ul>
           <li>Favorite tech and everydary carry pouches</li>
@@ -48,13 +51,13 @@ export default function Home() {
               Outside of sharing content from this site, the newsletter is a way
               for me to share inspiration that I have found around the web that
               I have enjoyed. You will probably see links to{" "}
-              <a href='https://www.youtube.com/user/chasereeves'>
+              <CustomLink href='https://www.youtube.com/user/chasereeves'>
                 Chase Reeves
-              </a>{" "}
+              </CustomLink>{" "}
               videos,{" "}
-              <a href='https://www.carryology.com/contributor/taylor-welden/'>
+              <CustomLink href='https://www.carryology.com/contributor/taylor-welden/'>
                 Taylor Welden
-              </a>{" "}
+              </CustomLink>{" "}
               articles, etc.
             </p>
             <p>

@@ -12,13 +12,13 @@ const SharePage: React.FC<ISharePageProps> = ({ slug, title }) => {
       <div className='space-x-4'>
         <a
           href={`https://twitter.com/intent/tweet?url=https://alexcarpenter.me/${slug}&text=${text}`}
-          className='hover:text-gray-900'
+          className='hover:text-gray-900 hover:bg-yellow focus:text-gray-900 focus:bg-yellow'
         >
           Twitter
         </a>
         <a
           href={`mailto:?subject=${text}&body=https://alexcarpenter.me/${slug}`}
-          className='hover:text-gray-900'
+          className='hover:text-gray-900 hover:bg-yellow focus:text-gray-900 focus:bg-yellow'
         >
           Email
         </a>
